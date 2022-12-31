@@ -24,6 +24,7 @@ public class LoginServlet extends HttpServlet {
         domain = config.getServletContext().getInitParameter("com.auth0.domain");
         try {
             authenticationController = AuthenticationControllerProvider.getInstance(config);
+
         } catch (UnsupportedEncodingException e) {
             throw new ServletException("Couldn't create the AuthenticationController instance. Check the configuration.", e);
         }

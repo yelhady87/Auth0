@@ -1,8 +1,6 @@
-FROM gradle:4.2-jdk8
+FROM container-registry.oracle.com/java/jdk:11.0.8-10
+WORKDIR /home/horus
+ADD . /home/horus
 
-WORKDIR /home/gradle
-ADD . /home/gradle
-
-CMD ["gradle", "appRun"]
-
+CMD ["./gradlew", "appRun"]
 EXPOSE 3000
